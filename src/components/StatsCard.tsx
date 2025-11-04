@@ -23,17 +23,17 @@ const StatsCard: React.FC<StatsCardProps> = ({
   return (
     <div 
       onClick={onClick}
-      className={`${bgColor} rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-shadow`}
+      className={`${bgColor} rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 cursor-pointer hover:shadow-lg transition-shadow`}
     >
-      <h3 className="text-gray-600 text-sm font-medium mb-2">{title}</h3>
-      <div className="flex items-center gap-4">
-        <span className={`text-4xl font-bold ${textColor}`}>{value}</span>
-        <div className="flex items-center gap-1 text-sm">
+      <h3 className="text-gray-600 text-xs sm:text-sm font-medium mb-2 sm:mb-2.5 lg:mb-3">{title}</h3>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 lg:gap-4">
+        <span className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${textColor}`}>{value}</span>
+        <div className="flex items-center gap-1 text-xs sm:text-sm">
           <span className="text-gray-600">Impression · {impression}%</span>
           {trending === 'up' ? (
-            <TrendingUp size={16} className="text-green-600" />
+            <TrendingUp size={14} className="text-green-600 sm:w-4 sm:h-4" />
           ) : (
-            <TrendingDown size={16} className="text-red-600" />
+            <TrendingDown size={14} className="text-red-600 sm:w-4 sm:h-4" />
           )}
         </div>
       </div>
